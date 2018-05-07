@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, a, p, ul {
+    margin: 0;
+    font-family: "Mont";
+    color: #565656;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 200;
+}
+
+canvas {
+    height: calc(100vh - 60px) !important ;
+	position: absolute;
+	display: block;
+	vertical-align: bottom;
+	z-index: 0;
+}
+
+
+#particles-js {
+	width: 100%;
+	background-color: none;
+	background-image: url("../images/7.jpg");
+	opacity: 0.9;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 100%;
+}
+

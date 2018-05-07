@@ -1,0 +1,19 @@
+.section-search {
+	height: 100vh;
+}
+
+.search-wrapper {
+	display: flex;
+	margin-top: 40px;
+}
+
+.search-input {
+	width: 80%;
+	height: 50px;
+	margin-left: 20px;
+}
+
+.search-img {
+	height: 50px;
+	margin-left: 15px;
+}
