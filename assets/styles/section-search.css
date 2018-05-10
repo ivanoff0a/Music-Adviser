@@ -1,19 +1,147 @@
+input {
+	padding: 10px 50px;
+	background: none;
+	border: 2px solid grey;
+	background-image: url('../images/search2.png');
+	background-size: 35px;
+	background-position: 5px 5px; 
+    background-repeat: no-repeat;
+    line-height: 40px;
+    font-size: 22px;
+    color: #565656;
+    outline: none;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input:focus {
+	width: 100%;
+	color: grey;
+	transition: .3s ease-in-out;
+}
+
 .section-search {
 	height: 100vh;
 }
 
+.container-search {	
+	width: 100%;
+	transition: .3s;	
+}
+
+.search-headline {
+	padding: 10px 10px;
+}
+
 .search-wrapper {
 	display: flex;
-	margin-top: 40px;
 }
 
 .search-input {
-	width: 80%;
+	width: 100%;
 	height: 50px;
-	margin-left: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .search-img {
-	height: 50px;
-	margin-left: 15px;
+	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+@media screen and (min-width: 425px) {
+	.search-wrapper {
+		display: flex;
+	}
+
+	.search-input {
+		height: 50px;
+		margin-left: 15px;
+	}
+
+	.search-img {
+		height: 50px;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.container-search {
+		padding-right: 200px;
+		padding-left: 200px;
+	}
+}
+
+@media screen and (min-width: 1224px) {
+	.container-search {
+		padding-right: 300px;
+		padding-left: 300px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.container-search {
+		padding-right: 400px;
+		padding-left: 400px;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.container-search {
+		padding-right: 500px;
+		padding-left: 500px;
+	}
+}
+
+
+
+/*==================*/
+
+.input--makiko {
+	overflow: hidden;
+	background: #8781BD;
+}
+
+.input__field--makiko {
+	width: 100%;
+	background: transparent;
+	color: #797693;
+	z-index: 10;
+	font-weight: 500;
+}
+
+.input__label--makiko {
+	position: absolute;
+	width: 100%;
+	text-align: left;
+	pointer-events: none;
+	color: #fff;
+}
+
+.input__label--makiko::before {
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 45%;
+	left: 20px;
+	background: url(../images/search2.png) no-repeat center center;
+	background-size: 100%;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.input__label-content--makiko {
+	display: block;
+	padding: 1.5em 0 0 2.75em;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.input__field--makiko:focus + .input__label--makiko::before,
+.input--filled .input__label--makiko::before {
+	-webkit-transform: scale3d(38, 38, 1);
+	transform: scale3d(38, 38, 1);
 }
