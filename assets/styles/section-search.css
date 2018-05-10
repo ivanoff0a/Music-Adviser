@@ -4,7 +4,7 @@ input {
 	border: 2px solid grey;
 	background-image: url('../images/search2.png');
 	background-size: 35px;
-	background-position: 5px 5px; 
+	background-position: 5px 5px;
     background-repeat: no-repeat;
     line-height: 40px;
     font-size: 22px;
@@ -24,15 +24,16 @@ input:focus {
 	height: 100vh;
 }
 
-.container-search {	
+.container-search {
 	width: 100%;
-	transition: .3s;	
+	transition: .3s;
+	padding: 0 10px;
 }
 
 .search-headline {
-	padding: 10px 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
-
 .search-wrapper {
 	display: flex;
 }
@@ -40,14 +41,34 @@ input:focus {
 .search-input {
 	width: 100%;
 	height: 50px;
-	margin-left: 10px;
-	margin-right: 10px;
 }
 
 .search-img {
 	height: 40px;
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+.container-result {
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+
+.song-item {
+	display: flex;
+	justify-content: flex-start;
+	color: #565656;
+	font-size: 18px;
+	padding-bottom: 20px;
+}
+
+.artist-item {
+	display: flex;
+	justify-content: flex-start;
+	color: #565656;
+	font-size: 22px;
+	padding-top: 10px;
 }
 
 @media screen and (min-width: 425px) {
@@ -57,13 +78,16 @@ input:focus {
 
 	.search-input {
 		height: 50px;
-		margin-left: 15px;
 	}
 
 	.search-img {
 		height: 50px;
-		margin-left: 15px;
-		margin-right: 15px;
+	}
+
+	.container-search {
+		width: 100%;
+		transition: .3s;
+		padding: 0 15px;
 	}
 }
 
@@ -99,7 +123,7 @@ input:focus {
 
 /*==================*/
 
-.input--makiko {
+/*.input--makiko {
 	overflow: hidden;
 	background: #8781BD;
 }
@@ -144,4 +168,4 @@ input:focus {
 .input--filled .input__label--makiko::before {
 	-webkit-transform: scale3d(38, 38, 1);
 	transform: scale3d(38, 38, 1);
-}
+}*/

@@ -22,7 +22,7 @@ $(document).ready(function() {
     });
 
         $(".to-search").click(function () {
-          // mobileMenu.removeClass("-opened"); 
+          // mobileMenu.removeClass("-opened");
         var id  = $('.section-search'),
             top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1500);
@@ -76,6 +76,18 @@ $(document).ready(function() {
     //         }, 200 + timeToWait)
     //     }
     // });
+
+    const clientId = 'rf51y_ZJNokGoTMgQa4Z6yOFuDpPplwSoPxyicUIMQEeC1vMWq9BlRlmwSPjGLhv';
+    const clientSecret = 'UW2zsgiVtEI5jzUVCA1TxGTbJRUwEPLDEiVuVVH9tWqQpBxdEzyiE8jUbdpWa8IZ0k0kiCs';
+    const clientToken = 'eXwmqiuCq7zzR45gqKazEMtUG0xsoE1OsvtT_ujBsxExlcGpYxEX';
+
+    const body = {
+        apikey: '5e5c3cd68b10dba06966ae7344322a25'
+    }
+
+    $.getJSON('http://api.musixmatch.com/ws/1.1/track.search?apikey=5e5c3cd68b10dba06966ae7344322a25&q_track=Dire%20straits%20Sultans%20of%20Swing&page_size=10', function(result) {
+        console.log(result);
+    });
 
 });
 
