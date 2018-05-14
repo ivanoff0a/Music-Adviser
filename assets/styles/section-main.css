@@ -4,8 +4,8 @@
     display: flex;
     align-items: center;
     z-index: 20;
-    background-color: #f2ca6a;
-}
+    background-image: url('../images/lyrics.png') 
+}    
 
 .wrapper {
     overflow: hidden;
