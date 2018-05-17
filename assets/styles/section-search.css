@@ -47,13 +47,13 @@ input {
 	align-items: center;
 }
 
-/*.btn-search:hover {
+.btn-search:hover {
     color: #f4f4f4;
     background-color:#565656;
     transition: .3s ease-in-out;
 }
-*/
-.btn-search:before {
+
+/*.btn-search:before {
   content: "";
   position: absolute;
   left: 0;
@@ -70,7 +70,7 @@ input {
   bottom: 0%;
   top: auto;
   height: 100%;
-}
+}*/
 
 
 .search-input {
@@ -108,7 +108,7 @@ input {
   width: 100%;
   z-index: -1;
   color: white;
-  background-color: #ced6e9;
+  background-color: grey;
   transition: .8s cubic-bezier(.165,.84,.44,1);
 }
 
@@ -156,13 +156,49 @@ input {
 
 .search-error span {
 	padding-left: 6px;
-	margin-bottom: 10px;
 }
 
 .search-error.-occured {
-	display: block;
+	display: inline-flex;
 	transform: translateY(10%);
 	transition: .4s ease-out;
+}
+
+.modal-result {
+    display: flex;
+    position: fixed;
+    background-color: white;
+    z-index: 100;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal-info-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-name {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.song-name {
+    font-size: 27px;
+}
+
+.cross-img {
+    height: 24px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.modal-ph-wrapper img {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
 }
 
 
@@ -175,9 +211,9 @@ input {
 		padding: 10px 40px;
 		background-position: 5px 10px;
     	font-size: 22px;
-    	background-size: 30px;	
+    	background-size: 30px;
 	}
-	
+
 	.btn-search {
 	    height: 50px;
 	}
@@ -219,7 +255,7 @@ input {
 	.by-item {
 		font-size: 20px;
 	}
-	
+
 	.info-items {
 		padding-top: 10px;
 		padding-left: 10px;
@@ -231,7 +267,7 @@ input {
 
 	input {
     	font-size: 24px;
-	}	
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -250,7 +286,7 @@ input {
 	.by-item {
 		font-size: 22px;
 	}
-	
+
 }
 
 
@@ -258,7 +294,7 @@ input {
 	.container-search {
 		padding-right: 200px;
 		padding-left: 200px;
-	}	
+	}
 }
 
 @media screen and (min-width: 1440px) {
@@ -296,7 +332,7 @@ input {
 	.by-item {
 		font-size: 25px;
 	}
-	
+
 	.info-items {
 		padding-top: 15px;
 		padding-left: 15px;

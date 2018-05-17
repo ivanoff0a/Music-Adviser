@@ -71,16 +71,31 @@
 </section>
 <section class="section-search">
 <div class="container-search">
-    <h2 class="search-headline">Search lyrics</h2>
-    <div class="search-wrapper">
+    <h2 data-aos="fade-right" class="search-headline">Search lyrics</h2>
+    <div data-aos="fade-right" class="search-wrapper">
         <input class="search-input" placeholder="Search lyrics & more" type="text" name="">
         <button class="btn-search">Search</button>
     </div>
-    <div class="search-error">
+    <div data-aos="fade-down" class="search-error">
         <img src="assets/images/error.png">
-        <span>Неправильный ввод</span>
+        <span>There is no such song in the database</span>
     </div>
     <div class="container-result">
+    </div>
+    <div class="modal-result">
+        <img class="cross-img" src="assets/images/cross.png">
+        <div class="modal-info">
+            <div class="modal-ph-wrapper">
+                <img src="https://images.genius.com/3d5481eedcae5b24a6de3f60128d5bf8.300x300x1.jpg">
+            </div>
+            <div class="modal-info-wrapper">
+                <span class="artist-name">Playboi Carti</span>
+                <span class="song-name">Shoota(Ft. Lil Uzi Vert)</span>
+            </div>
+            <div class="modal-lyrics-wrapper">
+
+            </div>
+        </div>
     </div>
 </div>
 <!--     <span class="input input--makiko">
@@ -95,8 +110,8 @@
     src="https://code.jquery.com/jquery-3.3.1.js"
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
-<!-- <script type="text/javascript" src="assets/scripts/lib/owl.carousel.js" ></script>
-<script src="assets/scripts/aos.js"></script> -->
+<script type="text/javascript" src="assets/scripts/lib/owl.carousel.js" ></script>
+<script src="assets/scripts/aos.js"></script>
 
 <script type="text/javascript" src="assets/scripts/script.js" ></script>
 <script type="text/javascript" src="assets/scripts/lib/particles-min.js" ></script>
