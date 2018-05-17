@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, a, p, ul {
+body, h1, h2, h3, h4, a, p, ul, button {
     margin: 0;
     font-family: "Mont";
     color: #565656;
@@ -42,7 +42,6 @@ canvas {
 #particles-js {
 	width: 100%;
 	background-color: none;
-	background-image: url("../images/7.jpg");
 	opacity: 0.9;
 	background-repeat: no-repeat;
 	background-size: cover;
