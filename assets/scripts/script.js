@@ -33,7 +33,8 @@ $(document).ready(function() {
         btnSearch = $('.btn-search'),
         searchInput = $('.search-input'),
         songDiv = $('.container-result'),
-        searchError = $('.search-error');
+        searchError = $('.search-error'),
+        modalRes = $('.modal-result');
 
     $(".mobile-toggler").click(function() {
         if (modal.hasClass('-active')) {
@@ -99,6 +100,10 @@ $(document).ready(function() {
             }
         })
     }
+
+    $('.song-items').click(function(){
+        modalRes.toggleClass('-opened');
+    })
 
     function returnSongPreviewBlock(songData) {
         return '<div class="song-items" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><div class="img-wrapper"><img src="' + songData.song_art_image_thumbnail_url + '"></div><div class="info-items"><span class="song-item">' + songData.title_with_featured + '</span><div class="artist-wrapper"><span class="by-item">by </span><span class="artist-item">' + songData.primary_artist.name + '</span></div></div></div>';

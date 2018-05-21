@@ -165,8 +165,8 @@ input {
 }
 
 .modal-result {
-    display: flex;
     position: fixed;
+    overflow-y: scroll;
     background-color: white;
     z-index: 100;
     bottom: 0;
@@ -175,30 +175,39 @@ input {
     right: 0;
 }
 
+/*.song-items.-opened.modal-result{
+    display: flex;
+}*/
+
+.modal-info {
+    padding-top: 60px;
+}
+
 .modal-info-wrapper {
     display: flex;
     flex-direction: column;
+    padding-left: 15px;
 }
 
 .artist-name {
-    font-size: 30px;
+    font-size: 28px;
     margin-top: 10px;
 }
 
 .song-name {
-    font-size: 27px;
+    font-size: 25px;
 }
 
 .cross-img {
+    position: absolute;
     height: 24px;
-    margin-top: 20px;
-    margin-left: 20px;
+    top: 15px;
+    left: 15px;
 }
 
 .modal-ph-wrapper img {
     display: flex;
     justify-content: center;
-    margin-top: 70px;
 }
 
 
@@ -242,6 +251,42 @@ input {
 		font-size: 18px;
 	}
 
+    .song-name {
+        font-size: 28px;
+    }
+
+    .artist-name {
+        font-size: 29px;
+    }
+
+    .modal-info {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 80px;
+        display: inline-flex;
+    }
+
+    .modal-info-wrapper {
+        padding-left: 0;
+    }
+
+    .cross-img {
+        top: 30px;
+        left: 30px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .modal-result {
+        min-width: 100%;
+    }
+    .modal-ph-wrapper {
+        min-width: 100%;
+    }
+
+    .modal-ph-wrapper img {
+        min-width: 100%;
+    }
 }
 
 @media screen and (min-width: 768px) {
