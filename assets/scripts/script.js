@@ -1,11 +1,5 @@
 $(document).ready(function() {
 
-    // $(".owl-carousel").owlCarousel({
-    //     items: 1,
-    //     autoHeight: true,
-    //     animateOut: 'fadeOut',
-    //     nav: true
-    // });
 
     AOS.init({
       offset: 200,
@@ -34,7 +28,11 @@ $(document).ready(function() {
         searchInput = $('.search-input'),
         songDiv = $('.container-result'),
         searchError = $('.search-error'),
-        modalRes = $('.modal-result');
+        modalRes = $('.modal-result'),
+        quitImg = $('.cross-img'),
+        modalInfo = $('.modal-info');
+
+      let searchResults = [];
 
     $(".mobile-toggler").click(function() {
         if (modal.hasClass('-active')) {
@@ -71,7 +69,15 @@ $(document).ready(function() {
 
     document.onkeyup = function (e) {
         e = e || window.event;
-        if (e.keyCode === 13) {
+        if (e.keyCode === 27) {
+            modalRes.removeClass('-opened');
+        }
+        return false;
+    }
+
+    document.onkeyup = function (w) {
+        w = w || window.event;
+        if (w.keyCode === 13) {
             searchRequest = searchInput.val();
             sendRequest();
         }
@@ -88,22 +94,33 @@ $(document).ready(function() {
         $.get(basePath + 'search?q=' + searchRequest + accessTokenText + clientToken, function(response) {
             if(response.response.hits.length < 1) {
                 searchError.toggleClass('-occured');
-                // setTimeout(function(){
-                //     searchError.removeClass('-occured');
-                // }, 2500);
             } else {
-                for (let i = 0; i < response.response.hits.length; i++) {
-                    console.log(response.response.hits[i].result);
-                    songDiv.append(returnSongPreviewBlock(response.response.hits[i].result));
+                searchResults = response.response.hits;
+                for (let i = 0; i < searchResults.length; i++) {
+                    console.log(searchResults[i].result);
+                    songDiv.append(returnSongPreviewBlock(searchResults[i].result));
                 }
                 searchError.removeClass('-occured');
             }
         })
     }
 
-    $('.song-items').click(function(){
+    songDiv.on('click', '.song-items', function(){
+        modalInfo.html('');
+        let currentSong = $(this).index();
+        modalInfo.append(returnSongFullInfoBlock(searchResults[currentSong].result));
         modalRes.toggleClass('-opened');
     })
+
+    quitImg.click(function (){
+        modalRes.removeClass('-opened');
+    })
+
+    function returnSongFullInfoBlock(songData) {
+        console.log(':A:A:A:A', songData);
+        return '<div class="modal-info"><div class="modal-ph-wrapper"><img src="' + songData.song_art_image_thumbnail_url + '"></div><div class="modal-info-wrapper"><span class="artist-name">' + songData.primary_artist.name + '</span><span class="song-name">' + songData.title_with_featured + '</span></div></div><div class="modal-lyrics-wrapper"></div>'
+    }
+
 
     function returnSongPreviewBlock(songData) {
         return '<div class="song-items" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><div class="img-wrapper"><img src="' + songData.song_art_image_thumbnail_url + '"></div><div class="info-items"><span class="song-item">' + songData.title_with_featured + '</span><div class="artist-wrapper"><span class="by-item">by </span><span class="artist-item">' + songData.primary_artist.name + '</span></div></div></div>';
