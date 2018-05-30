@@ -175,12 +175,13 @@ input {
     right: 0;
 }
 
-/*.song-items.-opened.modal-result{
+.modal-result.-opened{
     display: flex;
-}*/
+}
 
 .modal-info {
     padding-top: 60px;
+    width: 100%;
 }
 
 .modal-info-wrapper {
@@ -191,7 +192,6 @@ input {
 
 .artist-name {
     font-size: 28px;
-    margin-top: 10px;
 }
 
 .song-name {
@@ -248,15 +248,17 @@ input {
 	.song-item,
 	.artist-item,
 	.by-item {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
     .song-name {
         font-size: 28px;
+        color: #939393;
     }
 
     .artist-name {
         font-size: 29px;
+        color: #696969;
     }
 
     .modal-info {
@@ -265,15 +267,25 @@ input {
         padding-top: 80px;
         display: inline-flex;
     }
+    
+    .modal-ph-wrapper img {
+		height: 170px;
+    }
 
     .modal-info-wrapper {
-        padding-left: 0;
+        padding-left: 10px;
     }
 
     .cross-img {
         top: 30px;
         left: 30px;
     }
+}
+
+@media screen and (min-width: 600px) {
+  	.modal-ph-wrapper img {
+		height: 190px;
+    }	
 }
 
 @media screen and (max-width: 424px) {
@@ -287,6 +299,9 @@ input {
     .modal-ph-wrapper img {
         min-width: 100%;
     }
+    .artist-name {
+    	margin-top: 10px;
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -313,6 +328,24 @@ input {
 	input {
     	font-size: 24px;
 	}
+  	
+  	.modal-ph-wrapper img {
+		height: 250px;
+    }	
+ 	
+ 	.modal-info-wrapper {
+        padding-left: 20px;
+    }    
+	.artist-name {
+	    font-size: 30px;
+	}
+
+	.song-name {
+	    font-size: 27px;
+	}
+	.modal-info {
+		margin-left: 10%;
+	}	
 }
 
 @media screen and (min-width: 1024px) {
@@ -332,6 +365,40 @@ input {
 		font-size: 22px;
 	}
 
+  	.modal-ph-wrapper img {
+		height: 250px;
+    }	
+ 	
+ 	.modal-info-wrapper {
+        padding-left: 20px;
+    }    
+	.artist-name {
+	    font-size: 33px;
+	}
+
+	.song-name {
+	    font-size: 30px;
+	}
+
+	.modal-info {
+		margin-left: 20%;
+	}	
+  	
+  	.modal-ph-wrapper img {
+		height: 270px;
+    }	
+ 	
+ 	.modal-info-wrapper {
+        padding-left: 20px;
+    }    
+	.artist-name {
+	    font-size: 32px;
+	}
+
+	.song-name {
+	    font-size: 29px;
+	}
+
 }
 
 
@@ -339,6 +406,9 @@ input {
 	.container-search {
 		padding-right: 200px;
 		padding-left: 200px;
+	}
+	.modal-info {
+		margin-left: 25%;
 	}
 }
 
@@ -357,6 +427,25 @@ input {
 	.artist-item,
 	.by-item {
 		font-size: 24px;
+	}
+
+	.modal-info {
+		margin-left: 30%;
+	}
+  	
+  	.modal-ph-wrapper img {
+		height: 290px;
+    }	
+ 	
+ 	.modal-info-wrapper {
+        padding-left: 25px;
+    }    
+	.artist-name {
+	    font-size: 34px;
+	}
+
+	.song-name {
+	    font-size: 31px;
 	}
 
 }
@@ -382,6 +471,15 @@ input {
 		padding-top: 15px;
 		padding-left: 15px;
 	}
+  	
+  	.modal-ph-wrapper img {
+		height: 310px;
+    }	
+ 	
+ 	.modal-info-wrapper {
+        padding-left: 30px;
+    }    
+
 }
 
 
