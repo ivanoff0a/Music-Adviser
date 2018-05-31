@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     AOS.init({
       offset: 200,
-      duration: 800,
+      duration: 600,
       easing: 'ease-in-sine',
       delay: 300,
     });
@@ -117,8 +117,7 @@ $(document).ready(function() {
     })
 
     function returnSongFullInfoBlock(songData) {
-        console.log(':A:A:A:A', songData);
-        return '<div class="modal-info"><div class="modal-ph-wrapper"><img src="' + songData.song_art_image_thumbnail_url + '"></div><div class="modal-info-wrapper"><span class="artist-name">' + songData.primary_artist.name + '</span><span class="song-name">' + songData.title_with_featured + '</span></div></div><div class="modal-lyrics-wrapper"></div>'
+        return '<div class="modal-info"><div class="modal-ph-wrapper"><img src="' + songData.song_art_image_thumbnail_url + '"></div><div class="modal-info-wrapper"><span class="artist-name">' + songData.primary_artist.name + '</span><span class="song-name">' + songData.title_with_featured + '</span></div></div><div class="modal-lyrics-wrapper"></div>';
     }
 
 

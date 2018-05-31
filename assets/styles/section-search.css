@@ -13,6 +13,10 @@ input {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
+.modal-info-container {
+	display: inline-flex;
+	flex-direction: row;
+}
 
 .quit-container {
     position: absolute;
@@ -67,26 +71,6 @@ input {
     background-color:#565656;
     transition: .3s ease-in-out;
 }
-
-/*.btn-search:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  z-index: -1;
-  color: white;
-  background-color: #ced6e9;
-  transition: .8s cubic-bezier(.165,.84,.44,1);
-}
-.btn-search:hover {background: rgba(255,255,255,0); color: white; transition: .6s;}
-.btn-search:hover:before {
-  bottom: 0%;
-  top: auto;
-  height: 100%;
-}*/
-
 
 .search-input {
 	width: 100%;
@@ -193,11 +177,14 @@ input {
 
 .modal-result.-opened{
     display: flex;
+    flex-direction: column;
 }
 
 .modal-info {
-    padding-top: 60px;
+    padding-top: 30px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .modal-info-wrapper {
@@ -215,10 +202,7 @@ input {
 }
 
 .cross-img {
-/*    position: absolute;*/
     height: 24px;
-/*    top: 15px;
-    left: 15px;*/
 }
 
 .modal-ph-wrapper img {
@@ -226,6 +210,11 @@ input {
     justify-content: center;
 }
 
+@media screen and (min-width: 320px) {
+	.modal-info {
+	    flex-direction: column;
+	}
+}
 
 @media screen and (min-width: 425px) {
 	.search-wrapper {
@@ -295,6 +284,12 @@ input {
         top: 30px;
         left: 30px;
     }
+	
+	.modal-info {
+		display: inline-flex;
+		flex-direction: row;
+	}
+
 }
 
 @media screen and (min-width: 600px) {
@@ -359,17 +354,8 @@ input {
 	    font-size: 27px;
 	}
 	.modal-info {
-		margin-left: 10%;
+		margin-left: 5%;
 	}
-
-    .modal-lyrics-wrapper {
-        display: flex;
-        justify-content: center;
-        width: 768px;
-        height: auto;
-        margin-right: 15px;
-        margin-left: 15px;
-    }
 }
 
 @media screen and (min-width: 1024px) {
