@@ -105,21 +105,10 @@ $(document).ready(function() {
         })
     }
 
-    songDiv.on('click', '.song-items', function(songData){
+    songDiv.on('click', '.song-items', function(){
         modalInfo.html('');
         let currentSong = $(this).index();
-        let artist = {};
-
-        let pickedSong = searchResults[currentSong].result;
-
-        // $.get(basePath + 'artists/' + pickedSong.primary_artist.id + '?access_token=' + clientToken, function(response) {
-        //     artist = response.response.artist;
-        // });
-
-        modalInfo.append(returnSongFullInfoBlock(pickedSong));
-
-        // modalInfo.append(returnArtistFullInfoBlock(artist));
-
+        modalInfo.append(returnSongFullInfoBlock(searchResults[currentSong].result));
         modalRes.toggleClass('-opened');
     })
 
@@ -128,11 +117,7 @@ $(document).ready(function() {
     })
 
     function returnSongFullInfoBlock(songData) {
-        return '<div class="modal-info"><div class="modal-info-container"><div class="modal-ph-wrapper"><img src="' + songData.song_art_image_thumbnail_url + '"></div><div class="modal-info-wrapper"><span class="artist-name">' + songData.primary_artist.name + '</span><span class="song-name">' + songData.title_with_featured + '</span></div></div><div class="modal-lyrics-container"><a href=""></a></div></div>';
-    }
-
-    function returnArtistFullInfoBlock(artist) {
-        return '<div class="modal-info"><div class="modal-info-container"><div class="modal-ph-wrapper"><img src="' + artist.header_img_url + '"></div><div class="modal-info-wrapper"><span class="artist-name">' +  + '</span><span class="song-name">' + artist.title_with_featured + '</span></div></div><div class="modal-lyrics-container"><a href=""></a></div></div>';
+        return '<div class="modal-info"><div class="modal-info-container"><div class="modal-ph-wrapper"><img src="' + songData.song_art_image_thumbnail_url + '"></div><div class="modal-info-wrapper"><span class="artist-name">' + songData.primary_artist.name + '</span><span class="song-name">' + songData.title_with_featured + '</span></div></div><div class="modal-lyrics-container"><a>' + songData.url + '</a></div></div>';
     }
 
 
